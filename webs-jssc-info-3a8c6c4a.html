@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>极速赛车 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Georgia, serif;
+      background-color: #f9f6f0;
+      color: #2c2c2c;
+      line-height: 1.7;
+      padding: 2rem 1rem 3rem;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background-color: #fffcf8;
+      padding: 2.5rem 2rem 2.8rem;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    /* hero 开场 */
+    .hero {
+      margin-bottom: 2.2rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+      color: #3e3a36;
+      border-left: 3px solid #d4b68a;
+      padding-left: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .hero p strong {
+      font-weight: 500;
+      color: #6a4c2c;
+    }
+
+    .hero .small-note {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #9b8b7a;
+      letter-spacing: 0.3px;
+    }
+
+    /* 承接段落 */
+    .lead {
+      margin: 1.8rem 0 1.5rem;
+      padding: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .lead p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+      word-break: break-word;
+    }
+
+    /* 引用 / 提示框 */
+    .notice-box {
+      background-color: #f2ede5;
+      border-radius: 18px;
+      padding: 1.3rem 1.6rem;
+      margin: 1.8rem 0 2rem;
+      border-left: 4px solid #c7a77b;
+      font-size: 0.95rem;
+      color: #3f3a33;
+    }
+
+    .notice-box .label {
+      display: inline-block;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.3rem;
+      color: #7b5f43;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .notice-box p {
+      margin-top: 0.2rem;
+      line-height: 1.65;
+    }
+
+    /* 特点列表 */
+    .features {
+      margin: 2rem 0 1.8rem;
+    }
+
+    .features h2 {
+      font-size: 1.3rem;
+      font-weight: 450;
+      color: #4e3f30;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px dashed #dacfc1;
+      padding-bottom: 0.6rem;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      background: #fcf9f5;
+      padding: 0.7rem 1rem 0.7rem 1rem;
+      border-radius: 14px;
+      border: 1px solid #eee7de;
+    }
+
+    .feature-item .icon {
+      flex-shrink: 0;
+      width: 1.6rem;
+      text-align: center;
+      color: #a8835b;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .feature-item .content {
+      font-size: 0.95rem;
+    }
+
+    .feature-item .content strong {
+      font-weight: 500;
+      color: #5f4b38;
+    }
+
+    .feature-item .content .sub {
+      display: block;
+      font-size: 0.85rem;
+      color: #7a6d5e;
+      margin-top: 0.1rem;
+    }
+
+    /* 温和结语 */
+    .closing {
+      margin-top: 2.5rem;
+      padding: 1.2rem 0 0.2rem;
+      border-top: 1px solid #e5dbd0;
+    }
+
+    .closing p {
+      font-size: 0.98rem;
+      color: #4b423a;
+      text-align: left;
+      margin-bottom: 0.8rem;
+    }
+
+    .closing .link-sentence {
+      background: #f7f2ea;
+      display: inline-block;
+      padding: 0.3rem 1rem 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+    }
+
+    a {
+      color: #7a5f45;
+      text-decoration: none;
+      border-bottom: 1px solid #d1beaa;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #3f2f21;
+      border-bottom-color: #7a5f45;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 520px) {
+      body {
+        padding: 1.2rem 0.6rem 2rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem 2rem;
+      }
+      .hero p {
+        font-size: 1.05rem;
+        padding-left: 0.9rem;
+      }
+      .feature-item {
+        padding: 0.6rem 0.8rem;
+      }
+      .notice-box {
+        padding: 1rem 1.2rem;
+      }
+    }
+
+    @media (min-width: 800px) {
+      .page {
+        padding: 3rem 3rem 3.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 开场短句 -->
+  <div class="hero">
+    <p>
+      一辆赛车疾驰而过，留下的不只是引擎的余音。<br>
+      更是一套清晰、直接的访问路径。<strong>极速赛车</strong> 的世界，<br>
+      并不需要花哨的包装——你只需要一个可靠的方向。
+      <span class="small-note">—— 从一次访问开始，慢慢熟悉它的节奏。</span>
+    </p>
+  </div>
+
+  <!-- 承接段落：简明指南 -->
+  <div class="lead">
+    <p>
+      无论是第一次接触，还是想更顺畅地浏览，提前了解平台的页面结构总会有帮助。  
+      大部分信息都整合在直观的导航与分类之中，但偶尔也会遇到需要留意的小细节。  
+      比如某些板块仅在特定时段更新，或需要确认浏览环境是否稳定。  
+      下面整理了几条基于实际体验的观察，算不上教程，更像是同行者之间的提醒。
+    </p>
+  </div>
+
+  <!-- 引用/提示块 -->
+  <div class="notice-box">
+    <span class="label">📌 访问提醒</span>
+    <p>
+      建议在连接稳定的网络下打开页面。部分动态内容加载依赖资源完整性，
+      若遇到显示延迟，可尝试刷新或稍后再试。另外，留意页面底部的更新标记，
+      能帮助你判断信息的新旧程度。
+    </p>
+  </div>
+
+  <!-- 特点列表 （从简明指南/提醒角度展开）-->
+  <div class="features">
+    <h2>· 结构上的几个特点</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="icon">➀</div>
+        <div class="content">
+          <strong>直观的入口布局</strong>
+          <span class="sub">首页将主要分区平铺展示，减少点击层级。适合快速定位感兴趣的板块。</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">➁</div>
+        <div class="content">
+          <strong>内容分类明确</strong>
+          <span class="sub">每个类别都有独立的标题与配色区分，即使不熟悉界面也能通过视觉引导找到方向。</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">➂</div>
+        <div class="content">
+          <strong>动态信息带时间戳</strong>
+          <span class="sub">绝大多数更新内容都附带发布时间，方便你自行判断时效性，避免混淆。</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">➃</div>
+        <div class="content">
+          <strong>辅助提示轻量且克制</strong>
+          <span class="sub">页面不会弹出过度干扰的窗口，只保留必要的操作反馈，浏览节奏由你自己控制。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 / 额外注意 -->
+  <div style="margin: 1.5rem 0 1.2rem; padding: 0.4rem 0;">
+    <p style="font-size: 0.92rem; color: #5f5549; background: #f7f1ea; padding: 0.5rem 1.2rem; border-radius: 30px; display: inline-block;">
+      ⚡ 常见疑问：页面是否需要注册才能浏览大部分内容？—— 公开区域无需登录，部分个性化功能才需账号。
+    </p>
+  </div>
+
+  <!-- 温和结尾 ＋ 嵌入链接 -->
+  <div class="closing">
+    <p>
+      赛车的世界可以很复杂，也可以很简单。如果你只是想找一个清楚、直接的起点，
+      不妨从 <a href="https://webs-jssc.com">极速赛车</a> 的主页开始看起。
+      没有多余的绕路，也没有刻意的渲染——页面就在那里，剩下的交给你的节奏。
+    </p>
+    <p style="margin-top: 1.2rem; font-size: 0.9rem; color: #7b7166;">
+      慢慢看，比什么都重要。
+    </p>
+  </div>
+
+  <!-- 极小的水印风格（仅体现变化种子，不显示在可见区域）-->
+  <div style="height:0;overflow:hidden;position:absolute;opacity:0;" aria-hidden="true">seed:412868c294b4b48c</div>
+</div>
+</body>
+</html>
